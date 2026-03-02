@@ -1,0 +1,91 @@
+{
+    "nodes": [
+        {
+            "parameters": {
+                "path": "greenhouse-data",
+                "responseMode": "responseNode",
+                "options": {}
+            },
+            "name": "Webhook",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1,
+            "position": [
+                160,
+                -160
+            ]
+        },
+        {
+            "parameters": {
+                "tableId": "greenhouse_stats",
+                "fieldsUi": {
+                    "fieldValues": [
+                        {
+                            "fieldId": "temp",
+                            "fieldValue": "={{ (22 + Math.random() * 5).toFixed(1) }}"
+                        },
+                        {
+                            "fieldId": "humidity",
+                            "fieldValue": "={{ Math.floor(40 + Math.random() * 20) }}"
+                        },
+                        {
+                            "fieldId": "soil_moisture",
+                            "fieldValue": "={{ Math.floor(60 + Math.random() * 15) }}"
+                        }
+                    ]
+                }
+            },
+            "name": "Supabase",
+            "type": "n8n-nodes-base.supabase",
+            "typeVersion": 1,
+            "position": [
+                368,
+                -160
+            ]
+        },
+        {
+            "parameters": {
+                "options": {}
+            },
+            "name": "Respond to Webhook",
+            "type": "n8n-nodes-base.respondToWebhook",
+            "typeVersion": 1,
+            "position": [
+                560,
+                -160
+            ]
+        }
+    ],
+    "connections": {
+        "Webhook": {
+            "main": [
+                [
+                    {
+                        "node": "Supabase",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Supabase": {
+            "main": [
+                [
+                    {
+                        "node": "Respond to Webhook",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Respond to Webhook": {
+            "main": [
+                []
+            ]
+        }
+    },
+    "pinData": {},
+    "meta": {
+        "templateCredsSetupCompleted": true
+    }
+}
