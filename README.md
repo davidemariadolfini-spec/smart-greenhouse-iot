@@ -1,8 +1,5 @@
 🌿 Smart Greenhouse IoT Dashboard Un ecosistema IoT completo per il monitoraggio di una serra intelligente. Il progetto simula la raccolta di dati ambientali in tempo reale, li archivia su un database cloud e li visualizza tramite una dashboard interattiva con analisi storica e grafici dinamici.
 
-> [!NOTE]
-> Questo apparirà in un box **blu**. Ideale per info generali.
-
 
 🚀 Panoramica del Progetto Il sistema dimostra l'integrazione tra un frontend moderno e un'infrastruttura backend "Low-Code". Utilizza n8n per la logica di automazione e Supabase come database relazionale, simulando il comportamento di sensori fisici tramite espressioni JavaScript.
 
