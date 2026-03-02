@@ -1,0 +1,78 @@
+body {
+    /* Replace the URL below with your own image link if you have one */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=2000');
+
+    background-size: cover;
+    /* Makes the image cover the whole screen */
+    background-position: center;
+    /* Centers the image */
+    background-attachment: fixed;
+    /* Keeps the image still when you scroll */
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    /* Makes text easier to read on dark backgrounds */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.dashboard {
+    width: 100%;
+    max-width: 800px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    /* White with 10% opacity */
+    backdrop-filter: blur(10px);
+    /* This creates a "Glassmorphism" effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    /* ... keep your other card settings ... */
+}
+
+.value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+/* Stili specifici per la pagina Analytics */
+.analytics-container {
+    max-width: 1000px;
+    /* Più largo per vedere meglio il grafico */
+}
+
+.chart-box {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    /* Sfondo leggermente più scuro per far risaltare il grafico */
+    padding: 30px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #81c784;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
