@@ -42,21 +42,6 @@ Umidità Terreno (%): Range 60-75% (valore intero).
 {{ Math.floor(60 + Math.random() * 15) }}
 
 
-📸 Screenshots
-
-Live Dashboard - dashboard.jpg 
-Interfaccia con aggiornamento automatico dei dati live.
-
-Analisi Storica (Analytics) - grafico.jpg 
-Grafico a barre dinamico con i trend degli ultimi 20 inserimenti.
-
-Backend Workflow (n8n) - n8n.jpg 
-Il flusso logico: Webhook → Supabase (Create Row) → Response.
-
-Database Structure (Supabase) - supabase.jpg 
-Log dei dati salvati correttamente nella tabella greenhouse_stats.
-
-
 ⚙️ Architettura e Funzionamento Polling: Il Frontend interroga il Webhook di n8n ogni 5 secondi tramite setInterval.
 
 Processing: n8n riceve la chiamata, genera i dati casuali e crea una nuova riga su Supabase.
@@ -68,13 +53,30 @@ Analytics: La pagina delle statistiche recupera i dati da Supabase e li visualiz
 
 📝 Come Configurare il Progetto 
 
-Database: Importa il file SQL presente nel repository su Supabase per configurare la tabella.
+Database: 
+Scarica il file schema.sql dalla cartella codici/.
 
-n8n: Configura un workflow con i nodi Webhook (GET), Supabase (Create Row) e Respond to Webhook.
+Importalo su Supabase (SQL Editor) per creare la tabella greenhouse_stats.
 
-Frontend: Inserisci le tue chiavi personali nei file .js:
+n8n (Backend): 
+Scarica il file n8n.json dalla cartella codici/.
 
-JavaScript 
+Importalo su n8n trascinandolo nell'area di lavoro.
+
+Collega le tue credenziali Supabase nel nodo dedicato.
+
+Frontend: 
+Scarica tutti i file presenti nella cartella codici/. 
+
+Per visualizzare la dashboard, avrai bisogno di:
+
+index.html e script.js (per la Dashboard principale).
+
+analytics.html e analytics.js (per la pagina dei Grafici).
+
+style.css (per la grafica).
+
+Importante: Apri script.js e analytics.js e inserisci le tue chiavi personali:
 const SUPABASE_URL = "IL_TUO_URL_SUPABASE"; 
 const SUPABASE_KEY = "LA_TUA_CHIAVE_ANON_PUBLIC"; 
 const N8N_WEBHOOK_URL = "IL_TUO_WEBHOOK_URL";
