@@ -81,3 +81,21 @@ const N8N_WEBHOOK_URL = "IL_TUO_WEBHOOK_URL";
 
 
 Sviluppato con passione per l'integrazione IoT e Cloud.
+
+## 📸 Screenshots
+
+### 1. Live Dashboard
+![Live Dashboard](immagini/dashboard.jpg)
+*Interfaccia con aggiornamento automatico dei dati live.*
+
+### 2. Analisi Storica (Analytics)
+![Analisi Storica](immagini/grafico.jpg)
+*Grafico a barre dinamico con i trend degli ultimi 20 inserimenti.*
+
+### 3. Backend Workflow (n8n)
+![Backend Workflow](immagini/n8n.jpg)
+*Il flusso logico: Webhook → Supabase (Create Row) → Response.*
+
+### 4. Database Structure (Supabase)
+![Database Structure](immagini/supabase.jpg)
+*Log dei dati salvati correttamente nella tabella greenhouse_stats.*
